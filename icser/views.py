@@ -77,8 +77,8 @@ def index(request):
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
                           "Chrome/79.0.3945.88 Safari/537.36 Edg/79.0.309.54 "
         }
-        FirstDay = datetime.datetime.strptime("20190916", "%Y%m%d")
-        url = "http://api.jh.zjut.edu.cn/student/classZf.php?username=" + username + "&password=" + password + "&year=2019&term=3"
+        FirstDay = datetime.datetime.strptime("20200217", "%Y%m%d")
+        url = "http://api.jh.zjut.edu.cn/student/classZf.php?username=" + username + "&password=" + password + "&year=2019&term=12"
         content = requests.get(url, headers=headers).content.decode().encode("GBK")
         JSON = json.loads(content)
         n = 0
