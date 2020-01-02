@@ -151,7 +151,7 @@ def index(request):
             outputString = outputString + line["output"] + "\n"
         # return render(request, "index.html", {"n": output, "file": outputFile})
         response = HttpResponse(outputString)
-        response['Content-Type'] = 'text/html'
+        response['Content-Type'] = 'application/octet-stream'
         response['Content-Disposition'] = 'attachment;filename=' + username + '.ics'
         return response
     return render(request, "index.html", {"n": output})
