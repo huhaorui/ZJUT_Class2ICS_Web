@@ -24,7 +24,7 @@ SECRET_KEY = '7wwpcb4-me)kpyi457jk)j-rwmws8jebp_j&i&id7u40ez5q*k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['class2ics.nas.huhaorui.com', '127.0.0.1']
 
 # Application definition
 

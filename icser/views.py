@@ -71,14 +71,14 @@ def index(request):
     if request.method == "POST":
         username = request.POST.get("id", None)
         password = request.POST.get("password", None)
-
         headers = {
             "Host": "api.jh.zjut.edu.cn",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
                           "Chrome/79.0.3945.88 Safari/537.36 Edg/79.0.309.54 "
         }
-        FirstDay = datetime.datetime.strptime("20200217", "%Y%m%d")
-        url = "http://api.jh.zjut.edu.cn/student/classZf.php?username=" + username + "&password=" + password + "&year=2019&term=12"
+        FirstDay = datetime.datetime.strptime("20200928", "%Y%m%d")
+        url = "http://api.jh.zjut.edu.cn/student/classZf.php?username=" + username + "&password=" + password + "&year=2020&term=3&ip=163/jwglxt"
+        print(username)
         content = requests.get(url, headers=headers).content.decode().encode("GBK")
         JSON = json.loads(content)
         n = 0
@@ -104,7 +104,7 @@ def index(request):
             week = each["zcd"][:-1]
             flag = 0
             try:
-                tmp = week.index("单")
+                week.index("单")
             except ValueError:
                 flag = 1
             if flag == 0:
@@ -117,7 +117,7 @@ def index(request):
                 continue
             flag = 0
             try:
-                tmp = week.index("双")
+                week.index("双")
             except ValueError:
                 flag = 1
             if flag == 0:
@@ -155,3 +155,5 @@ def index(request):
         response['Content-Disposition'] = 'attachment;filename=' + username + '.ics'
         return response
     return render(request, "index.html", {"n": output})
+
+

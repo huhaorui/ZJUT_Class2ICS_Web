@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="988e6198-d2ab-4494-817b-162375c48fc4" name="寝室" url="http://nas.huhaorui.com">
+        <fileTransfer rootFolder="/tmp" accessType="SFTP" host="router.huhaorui.com" port="8822" sshConfigId="38b86600-9404-465f-9af4-3118b7e3deec" sshConfig="hhr@router.huhaorui.com:8822 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
